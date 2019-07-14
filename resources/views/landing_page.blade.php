@@ -26,7 +26,7 @@
                   <span>New Arrivals</span>
                   <h2>denim jackets</h2>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-                  <a href="/Product" class="site-btn sb-line">DISCOVER ME</a>
+                  <a href="/Product" class="site-btn sb-line">DETAIL PRODUCT</a>
                   <a href="#" class="site-btn sb-white">ADD TO CART</a>
                 </div>
               </div>
@@ -39,7 +39,7 @@
                   <span>New Arrivals</span>
                   <h2>denim jackets</h2>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-                  <a href="/Product" class="site-btn sb-line">DISCOVER ME</a>
+                  <a href="/Product" class="site-btn sb-line">DETAIL PRODUCT</a>
                   <a href="#" class="site-btn sb-white">ADD TO CART</a>
                 </div>
               </div>  
@@ -52,7 +52,7 @@
                   <span>New Arrivals</span>
                   <h2>denim jackets</h2>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-                  <a href="/Product" class="site-btn sb-line">DISCOVER ME</a>
+                  <a href="/Product" class="site-btn sb-line">DETAIL PRODUCT</a>
                   <a href="#" class="site-btn sb-white">ADD TO CART</a>
                 </div>
               </div>  
