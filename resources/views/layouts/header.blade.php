@@ -64,14 +64,14 @@
                                         <a class="nav-link active" href="/ ">Home</a>
                                     </li>
                                     <li class="nav-item">
+                                        <a href="/Product" class="nav-link">Product</a>
+                                    </li>
+                                    </li>
+                                    <li class="nav-item">
                                         <a href="/About" class="nav-link">About Us</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="/sendemail" class="nav-link">Contact</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="/Login" class="nav-link">Login</a>
-                                    </li>
                                     <li class="nav-item">
                                         <a href="/Cart" class="nav-link">Cart</a>
                                     </li>

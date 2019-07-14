@@ -2,57 +2,79 @@
 
 @section('content')
 
-    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600|Montserrat:200,300,400" rel="stylesheet">
-
-    <link rel="stylesheet" href="assets4/css/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="assets4/fonts/ionicons/css/ionicons.min.css">
-    <link rel="stylesheet" href="assets4/fonts/law-icons/font/flaticon.css">
-
-    <link rel="stylesheet" href="assets4/fonts/fontawesome/css/font-awesome.min.css">
-
-
-    <link rel="stylesheet" href="assets4/css/slick.css">
-    <link rel="stylesheet" href="assets4/css/slick-theme.css">
-
-    <link rel="stylesheet" href="assets4/css/helpers.css">
-    <link rel="stylesheet" href="assets4/css/style.css">
-    <link rel="stylesheet" href="assets4/css/landing-2.css">
-    
-    <section class="pb_cover_v3 overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1  " id="section-home">
-        <div class="container">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-md-6">
-              <h2 class="heading mb-3">Fly makes you faster</h2>
-              <div class="sub-heading">
-                <p class="mb-4">New free template by <a href="http://uicookies.com" target="_blank">uicookies.com</a>. For more templates visit the <a href="http://uicookies.com" target="_blank">site</a>. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                <p class="mb-5"><a class="btn btn-success btn-lg pb_btn-pill smoothscroll" href="#section-pricing"><span class="pb_font-14 text-uppercase pb_letter-spacing-1">See Pricing</span></a></p>
-              </div>
-            </div>
-            <div class="col-md-1">
-            </div>
-            <div class="col-md-5 relative align-self-center">
-    
-              <form action="#" class="bg-white rounded pb_form_v1">
-                <h2 class="mb-4 mt-0 text-center">Sign Up for Free</h2>
-                <div class="form-group">
-                  <input type="text" class="form-control pb_height-50 reverse" placeholder="Nama Lengkap">
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control pb_height-50 reverse" placeholder="Nomor Telpon">
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control pb_height-50 reverse" placeholder="Email">
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control pb_height-50 reverse" placeholder="Password">
-                </div>
-                <div class="form-group">
-                  <input type="submit" class="btn btn-primary btn-lg btn-block pb_btn-pill  btn-shadow-blue" value="Register">
-                </div>
-              </form>
-            </div>
-          </div>
+  <link rel="icon" type="image/png" href="login_v1/images/icons/favicon.ico"/>
+	<link rel="stylesheet" type="text/css" href="login_v1/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="login_v1/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="login_v1/vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="login_v1/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="login_v1/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="login_v1/css/util.css">
+	<link rel="stylesheet" type="text/css" href="login_v1/css/main.css">
+  
+  <!--================Login Box Area =================-->
+	<div class="limiter">
+    <div class="container-login100">
+      <div class="wrap-login100">
+        <div class="login100-pic js-tilt" data-tilt>
+          <img src="login_v1/images/img-01.png" alt="IMG">
         </div>
-      </section>
-      <!-- END section -->
+
+        <form class="login100-form validate-form">
+          <span class="login100-form-title">
+            Member Login
+          </span>
+
+          <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+            <input class="input100" type="text" name="email" placeholder="Email">
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            </span>
+          </div>
+
+          <div class="wrap-input100 validate-input" data-validate = "Password is required">
+            <input class="input100" type="password" name="pass" placeholder="Password">
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-lock" aria-hidden="true"></i>
+            </span>
+          </div>
+          
+          <div class="container-login100-form-btn">
+            <button class="login100-form-btn">
+              Login
+            </button>
+          </div>
+
+          <div class="text-center p-t-12">
+            <span class="txt1">
+              Forgot
+            </span>
+            <a class="txt2" href="#">
+              Username / Password?
+            </a>
+          </div>
+
+          <div class="text-center p-t-136">
+            <a class="txt2" href="/Register">
+              Create your Account
+              <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="login_v1/vendor/jquery/jquery-3.2.1.min.js"></script>
+  <script src="login_v1/vendor/bootstrap/js/popper.js"></script>
+  <script src="login_v1/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="login_v1/vendor/select2/select2.min.js"></script>
+  <script src="login_v1/vendor/tilt/tilt.jquery.min.js"></script>
+  <script >
+    $('.js-tilt').tilt({
+      scale: 1.1
+    })
+  </script>
+  <script src="js/main.js"></script>
 @endsection
