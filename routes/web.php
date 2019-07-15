@@ -39,6 +39,10 @@ Route::get('/Cart', function () {
     return view('cart');
 });
 
+Route::get('/Checkout', function () {
+    return view('checkout');
+});
+
 Route::get('/sendemail','SendEmailController@index');
 
 Route::post('/sendemail/send','SendEmailController@send');

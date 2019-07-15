@@ -1,75 +1,72 @@
 @extends('layouts.header')
 
 @section('content')
+      <!--====== Favicon Icon ======-->
+      <link rel="shortcut icon" href="landing_v1/images/favicon.png" type="image/png">
 
-      <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
-			<!--
-			CSS
-			============================================= -->
+      <!--====== Bootstrap css ======-->
+      <link rel="stylesheet" href="landing_v1/css/bootstrap.min.css">
 
-      <link rel="stylesheet" href="discovershop/css/font-awesome.min.css"/>
-      <link rel="stylesheet" href="discovershop/css/bootstrap.min.css"/>
-      <link rel="stylesheet" href="discovershop/css/flaticon.css"/>
-      <link rel="stylesheet" href="discovershop/css/slicknav.min.css"/>
-      <link rel="stylesheet" href="discovershop/css/jquery-ui.min.css"/>
-      <link rel="stylesheet" href="discovershop/css/owl.carousel.min.css"/>
-      <link rel="stylesheet" href="discovershop/css/animate.css"/>
-      <link rel="stylesheet" href="discovershop/css/style.css"/>
+      <!--====== Line Icons css ======-->
+      <link rel="stylesheet" href="landing_v1/css/LineIcons.css">
 
-      <!-- Hero section -->
-      <section class="hero-section">
-        <div class="hero-slider owl-carousel">
-          <div class="hs-item set-bg" data-setbg="discovershop/img/bg.jpg">
-            <div class="container">
-              <div class="row">
-                <div class="col-xl-6 col-lg-7 text-white">
-                  <span>New Arrivals</span>
-                  <h2>denim jackets</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-                  <a href="/Product" class="site-btn sb-line">DETAIL PRODUCT</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="hs-item set-bg" data-setbg="discovershop/img/bg-2.jpg">
-            <div class="container">
-              <div class="row">
-                <div class="col-xl-6 col-lg-7 text-white">
-                  <span>New Arrivals</span>
-                  <h2>denim jackets</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-                  <a href="/Product" class="site-btn sb-line">DETAIL PRODUCT</a>
-                </div>
-              </div>  
-            </div>
-          </div>
-          <div class="hs-item set-bg" data-setbg="discovershop/img/bg.jpg">
-            <div class="container">
-              <div class="row">
-                <div class="col-xl-6 col-lg-7 text-white">
-                  <span>New Arrivals</span>
-                  <h2>denim jackets</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-                  <a href="/Product" class="site-btn sb-line">DETAIL PRODUCT</a>
-                </div>
-              </div>  
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="slide-num-holder" id="snh-1"></div>
-        </div>
-      </section>
-      <!-- Hero section end -->
+      <!--====== Magnific Popup css ======-->
+      <link rel="stylesheet" href="landing_v1/css/magnific-popup.css">
 
-      <script src="discovershop/js/jquery-3.2.1.min.js"></script>
-      <script src="discovershop/js/bootstrap.min.js"></script>
-      <script src="discovershop/js/jquery.slicknav.min.js"></script>
-      <script src="discovershop/js/owl.carousel.min.js"></script>
-      <script src="discovershop/js/jquery.nicescroll.min.js"></script>
-      <script src="discovershop/js/jquery.zoom.min.js"></script>
-      <script src="discovershop/js/jquery-ui.min.js"></script>
-      <script src="discovershop/js/main.js"></script>
+      <!--====== Default css ======-->
+      <link rel="stylesheet" href="landing_v1/css/default.css">
+
+      <!--====== Style css ======-->
+      <link rel="stylesheet" href="landing_v1/css/style.css">
       
+      {{-- <div id="parallax" class="header-content d-flex align-items-center">    --}}
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-5 col-lg-6">
+                    <div class="header-content-right">
+                        <h4 class="sub-title">Hello, I’m</h4>
+                        <h1 class="title">Mark Parker</h1>
+                        <p>A Freelance UI Designer & Web Developer</p>
+                        <a class="main-btn" href="/Product">View Our Product</a>
+                    </div> <!-- header content right -->
+                </div>
+                <div class="col-lg-6 offset-xl-1">
+                    <div class="header-image d-none d-lg-block">
+                        <img src="landing_v1/images/banner/hero.png" alt="hero">
+                    </div> <!-- header image -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    {{-- </div> <!-- header content --> --}}
+
+    {{-- <!--====== jquery js ======-->
+    <script src="landing_v1/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="landing_v1/js/vendor/jquery-1.12.4.min.js"></script>
+
+    <!--====== Bootstrap js ======-->
+    <script src="landing_v1/js/bootstrap.min.js"></script>
+    <script src="landing_v1/js/popper.min.js"></script>
+
+    <!--====== Magnific Popup js ======-->
+    <script src="landing_v1/js/jquery.magnific-popup.min.js"></script>
+
+    <!--====== Parallax js ======-->
+    <script src="landing_v1/js/parallax.min.js"></script>
+
+    <!--====== Counter Up js ======-->
+    <script src="landing_v1/js/waypoints.min.js"></script>
+    <script src="landing_v1/js/jquery.counterup.min.js"></script>
+
+
+    <!--====== Appear js ======-->
+    <script src="landing_v1/js/jquery.appear.min.js"></script>
+
+    <!--====== Scrolling js ======-->
+    <script src="landing_v1/js/scrolling-nav.js"></script>
+    <script src="landing_v1/js/jquery.easing.min.js"></script>
+
+
+    <!--====== Main js ======-->
+    <script src="landing_v1/js/main.js"></script> --}}
 
 @endsection
