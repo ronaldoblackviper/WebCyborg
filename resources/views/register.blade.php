@@ -9,16 +9,20 @@
             <div class="image-holder">
                 <img src="register_v1/images/registration-form-4.jpg" alt="">
             </div>
-            <form action="">
+        <form method="POST" action="{{ route('register') }}">
+                {{ csrf_field() }}
                 <h3>Sign Up</h3>
                 <div class="form-holder active">
-                    <input type="text" placeholder="name" class="form-control">
+                    <input type="text" name="name" id="inputname" placeholder="Please input your name" class="form-control">
                 </div>
                 <div class="form-holder">
-                    <input type="text" placeholder="e-mail" class="form-control">
+                    <input type="text" name="email" id="inputemail" placeholder="e-mail" class="form-control">
                 </div>
                 <div class="form-holder">
-                    <input type="password" placeholder="Password" class="form-control" style="font-size: 15px;">
+                    <input type="password" name="password" id="inputpassword" placeholder="Password" class="form-control" style="font-size: 15px;">
+                </div>
+                <div class="form-holder">
+                    <input type="password" name="password_confirmation" id="inputpassword" placeholder="Password" class="form-control" style="font-size: 15px;">
                 </div>
                 <div class="checkbox">
                     <label>
@@ -27,7 +31,7 @@
                     </label>
                 </div>
                 <div class="form-login">
-                    <button>Sign up</button>
+                    <button type="submit">Sign up</button>
                     <p>Already Have account? <a href="/Login">Login</a></p>
                 </div>
             </form>

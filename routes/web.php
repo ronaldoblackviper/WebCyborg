@@ -11,6 +11,14 @@
 |
 */
 
+// Route::get('/Register', function () {
+//     return view('register');
+// });
+
+// Route::get('/Login', function () {
+//     return view('login');
+// });
+
 Route::get('/', function () {
     return view('landing_page');
 });
@@ -23,26 +31,29 @@ Route::get('/Product', function () {
     return view('product');
 });
 
-Route::get('/Register', function () {
-    return view('register');
-});
-
-Route::get('/Login', function () {
-    return view('login');
-});
-
 Route::get('/About', function () {
     return view('about');
-});
-
-Route::get('/Cart', function () {
-    return view('cart');
-});
-
-Route::get('/Checkout', function () {
-    return view('checkout');
 });
 
 Route::get('/sendemail','SendEmailController@index');
 
 Route::post('/sendemail/send','SendEmailController@send');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/checkout', function(){
+    if(!auth::check()){
+        return redirect('login');
+    }
+     $post = Session::get('cart');
+     $post = $post[0];
+     $post['user_id'] = auth::user()->id;
+   
+    return view('checkout', compact('post'));
+});
+   
+Route::get("/Cart", function(){
+    return view('cart');
+});

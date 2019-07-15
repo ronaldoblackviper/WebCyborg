@@ -1,4 +1,4 @@
-@extends('layouts.header')
+@extends('layouts.app')
 
 @section('content')
 <div class="site-section bg-light" id="contact-section">
@@ -22,8 +22,7 @@
         <div class="container">
           <div class="row mb-5">
             <div class="col-12 text-center">
-              <h3 class="section-sub-title">Contact Form</h3>
-              <h2 class="section-title mb-3">Get In Touch</h2>
+              <h2 class="section-title mb-3">Contact Form</h2>
             </div>
           </div>
           <div class="row justify-content-center">

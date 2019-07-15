@@ -1,4 +1,4 @@
-@extends('layouts.header')
+@extends('layouts.app')
 
 @section('content')
 
@@ -126,7 +126,7 @@
 										<div class="cart_extra_total_value ml-auto">$29.90</div>
 									</li>
 								</ul>
-								<div class="checkout_button trans_200"><a href="/Checkout">proceed to checkout</a></div>
+								<div class="checkout_button trans_200"><a href="/checkout">proceed to checkout</a></div>
 							</div>
 						</div>
 					</div>

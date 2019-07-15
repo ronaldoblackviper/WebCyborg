@@ -1,4 +1,4 @@
-@extends('layouts.header')
+@extends('layouts.app')
 
 @section('content')
   <link rel="stylesheet" href="discovershop/css/bootstrap.min.css"/>
@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="discovershop/css/style.css"/>
 
   <!-- product section -->
-	<section class="product-section">
+	<section class="product-section" id="halamanproduct">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6">
