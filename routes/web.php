@@ -27,9 +27,9 @@ Route::get('/Contact', function () {
     return view('contact');
 });
 
-Route::get('/Product', function () {
-    return view('product');
-});
+// Route::get('/Product', function () {
+//     return view('product');
+// });
 
 Route::get('/About', function () {
     return view('about');
@@ -43,17 +43,31 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/checkout', function(){
-    if(!auth::check()){
-        return redirect('login');
-    }
-     $post = Session::get('cart');
-     $post = $post[0];
-     $post['user_id'] = auth::user()->id;
+// Route::get('/checkout', function(){
+//     if(!auth::check()){
+//         return redirect('login');
+//     }
+//      $post = Session::get('cart');
+//      $post = $post[0];
+//      $post['user_id'] = auth::user()->id;
    
-    return view('checkout', compact('post'));
-});
+//     return view('checkout', compact('post'));
+// });
    
-Route::get("/Cart", function(){
-    return view('cart');
-});
+// Route::get("/Cart", function(){
+//     if(!auth::check()){
+//         return redirect('login');
+//     }
+
+//     return view('cart');
+// });
+
+// Route::get('/', 'ProductsController@index');
+
+// Route::get('cart', 'ProductsController@cart');
+
+// Route::get('add-to-cart/{id}', 'ProductsController@addToCart');
+
+// Route::patch('update-cart', 'ProductsController@update');
+ 
+// Route::delete('remove-from-cart', 'ProductsController@remove');

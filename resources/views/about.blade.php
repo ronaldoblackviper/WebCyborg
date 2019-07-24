@@ -1,39 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.header')
 
 @section('content')
-      <!--====== Favicon Icon ======-->
-      <link rel="shortcut icon" href="landing_v1/images/favicon.png" type="image/png">
-
-      <!--====== Bootstrap css ======-->
-      <link rel="stylesheet" href="landing_v1/css/bootstrap.min.css">
-
-      <!--====== Line Icons css ======-->
-      <link rel="stylesheet" href="landing_v1/css/LineIcons.css">
-
-      <!--====== Magnific Popup css ======-->
-      <link rel="stylesheet" href="landing_v1/css/magnific-popup.css">
-
-      <!--====== Default css ======-->
-      <link rel="stylesheet" href="landing_v1/css/default.css">
-
-      <!--====== Style css ======-->
-      <link rel="stylesheet" href="landing_v1/css/style.css">
-
-    <link rel="stylesheet" href="assets2/fonts/icomoon/style.css">
-
-    <link rel="stylesheet" href="assets2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets2/css/jquery-ui.css">
-    <link rel="stylesheet" href="assets2/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets2/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="assets2/css/owl.theme.default.min.css">
-
-    <link rel="stylesheet" href="assets2/css/jquery.fancybox.min.css">
-
-    <link rel="stylesheet" href="assets2/gcss/bootstrap-datepicker.css">
-
-
-    <link rel="stylesheet" href="assets2/css/aos.css">
-
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="landing_v1/css/style.css">
     <link rel="stylesheet" href="assets2/css/style.css">
 
     <div class="site-section bg-light" id="about-section">
@@ -62,14 +31,6 @@
         </div>
         
         </div>
-    </div>
-
-    <div class="form-group">
-        @if (Request::has('previous'))
-            <input type="hidden" name="previous" value="{{ Request::get('previous') }}">
-        @else
-            <input type="hidden" name="previous" value="{{ URL::previous() }}">
-        @endif
     </div>
 
 @endsection

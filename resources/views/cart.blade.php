@@ -1,136 +1,88 @@
-@extends('layouts.app')
-
+@extends('layouts.layout')
+ 
+@section('title', 'Cart')
+ 
 @section('content')
+ 
+    <table id="cart" class="table table-hover table-condensed">
+        <thead>
+        <tr>
+            <th style="width:50%">Product</th>
+            <th style="width:10%">Price</th>
+            <th style="width:8%">Quantity</th>
+            <th style="width:22%" class="text-center">Subtotal</th>
+            <th style="width:10%"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php $total = 0?>
+        @if(session('cart'))
+            @foreach (session('cart') as $id => $details)
+                <?php $total += $details['price'] * $details['quantity'] ?>
+    
+                <tr>
+                    <td data-th="Product">
+                        <div class="row">
+                            <div class="col-sm-3 hidden-xs"><img src="{{ $details['photo'] }}" width="100" height="100" class="img-responsive"/></div>
+                            <div class="col-sm-9">
+                                <h4 class="nomargin">{{ $details['name'] }}</h4>
+                            </div>
+                        </div>
+                    </td>
+                    <td data-th="Price">${{ $details['price'] }}</td>
+                    <td data-th="Quantity">
+                        <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity" />
+                    </td>
+                    <td data-th="Subtotal" class="text-center">${{ $details['price'] * $details['quantity'] }}</td>
+                    <td class="actions" data-th="">
+                        <button class="btn btn-info btn-sm update-cart" data-id="{{ $id }}"><i class="fa fa-refresh"></i></button>
+                        <button class="btn btn-danger btn-sm remove-from-cart" data-id="{{ $id }}"><i class="fa fa-trash-o"></i></button>
+                    </td>
+                </tr>
+            @endforeach
+        @endif
+        </tbody>
+        <tfoot>
+        <tr class="visible-xs">
+            <td class="text-center"><strong>Total {{ $total }}</strong></td>
+        </tr>
+        <tr>
+            <td><a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+            <td colspan="2" class="hidden-xs"></td>
+            <td class="hidden-xs text-center"><strong>Total ${{ $total }}</strong></td>
+        </tr>
+        </tfoot>
+    </table>
+ 
+@endsection
 
-    <link rel="stylesheet" type="text/css" href="cart_v1/styles/bootstrap-4.1.2/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="cart_v1/styles/cart.css">
-    <link rel="stylesheet" type="text/css" href="cart_v1/styles/cart_responsive.css">
-    <!-- Cart -->
-
-		<div class="cart_section">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="cart_container">
-							
-							<!-- Cart Bar -->
-							<div class="cart_bar">
-								<ul class="cart_bar_list item_list d-flex flex-row align-items-center justify-content-end">
-									<li class="mr-auto">Product</li>
-									<li>Color</li>
-									<li>Size</li>
-									<li>Price</li>
-									<li>Quantity</li>
-									<li>Total</li>
-								</ul>
-							</div>
-
-							<!-- Cart Items -->
-							<div class="cart_items">
-								<ul class="cart_items_list">
-
-									<!-- Cart Item -->
-									<li class="cart_item item_list d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-end justify-content-start">
-										<div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start mr-auto">
-											<div><div class="product_number">1</div></div>
-											<div><div class="product_image"><img src="cart_v1/images/cart_item_1.jpg" alt=""></div></div>
-											<div class="product_name_container">
-												<div class="product_name"><a href="product.html">Cool Flufy Clothing without Stripes</a></div>
-												<div class="product_text">Second line for additional info</div>
-											</div>
-										</div>
-										<div class="product_color product_text"><span>Color: </span>beige</div>
-										<div class="product_size product_text"><span>Size: </span>L</div>
-										<div class="product_price product_text"><span>Price: </span>$3.99</div>
-										<div class="product_quantity_container">
-											<div class="product_quantity ml-lg-auto mr-lg-auto text-center">
-												<span class="product_text product_num">1</span>
-												<div class="qty_sub qty_button trans_200 text-center"><span>-</span></div>
-												<div class="qty_add qty_button trans_200 text-center"><span>+</span></div>
-											</div>
-										</div>
-										<div class="product_total product_text"><span>Total: </span>$3.99</div>
-									</li>
-								</ul>
-							</div>
-
-							<!-- Cart Buttons -->
-							<div class="cart_buttons d-flex flex-row align-items-start justify-content-start">
-								<div class="cart_buttons_inner ml-sm-auto d-flex flex-row align-items-start justify-content-start flex-wrap">
-									<div class="button button_clear trans_200"><a href="categories.html">clear cart</a></div>
-									<div class="button button_continue trans_200"><a href="categories.html">continue shopping</a></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row cart_extra_row">
-					<div class="col-lg-6">
-						<div class="cart_extra cart_extra_1">
-							<div class="cart_extra_content cart_extra_coupon">
-								<div class="cart_extra_title">Coupon code</div>
-								<div class="coupon_form_container">
-									<form action="#" id="coupon_form" class="coupon_form">
-										<input type="text" class="coupon_input" required="required">
-										<button class="coupon_button">apply</button>
-									</form>
-								</div>
-								<div class="coupon_text">Phasellus sit amet nunc eros. Sed nec congue tellus. Aenean nulla nisl, volutpat blandit lorem ut.</div>
-								<div class="shipping">
-									<div class="cart_extra_title">Shipping Method</div>
-									<ul>
-										<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
-											<label class="radio_container">
-												<input type="radio" id="radio_1" name="shipping_radio" class="shipping_radio">
-												<span class="radio_mark"></span>
-												<span class="radio_text">Next day delivery</span>
-											</label>
-											<div class="shipping_price ml-auto">$4.99</div>
-										</li>
-										<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
-											<label class="radio_container">
-												<input type="radio" id="radio_2" name="shipping_radio" class="shipping_radio">
-												<span class="radio_mark"></span>
-												<span class="radio_text">Standard delivery</span>
-											</label>
-											<div class="shipping_price ml-auto">$1.99</div>
-										</li>
-										<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
-											<label class="radio_container">
-												<input type="radio" id="radio_3" name="shipping_radio" class="shipping_radio" checked>
-												<span class="radio_mark"></span>
-												<span class="radio_text">Personal Pickup</span>
-											</label>
-											<div class="shipping_price ml-auto">Free</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6 cart_extra_col">
-						<div class="cart_extra cart_extra_2">
-							<div class="cart_extra_content cart_extra_total">
-								<div class="cart_extra_title">Cart Total</div>
-								<ul class="cart_extra_total_list">
-									<li class="d-flex flex-row align-items-center justify-content-start">
-										<div class="cart_extra_total_title">Subtotal</div>
-										<div class="cart_extra_total_value ml-auto">$29.90</div>
-									</li>
-									<li class="d-flex flex-row align-items-center justify-content-start">
-										<div class="cart_extra_total_title">Shipping</div>
-										<div class="cart_extra_total_value ml-auto">Free</div>
-									</li>
-									<li class="d-flex flex-row align-items-center justify-content-start">
-										<div class="cart_extra_total_title">Total</div>
-										<div class="cart_extra_total_value ml-auto">$29.90</div>
-									</li>
-								</ul>
-								<div class="checkout_button trans_200"><a href="/checkout">proceed to checkout</a></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+@section('scripts')
+    <script type="text/javascript">
+        $(".update-cart").click(function (e) {
+           e.preventDefault();
+           var ele = $(this);
+            $.ajax({
+               url: '{{ url('update-cart') }}',
+               method: "patch",
+               data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id"), quantity: ele.parents("tr").find(".quantity").val()},
+               success: function (response) {
+                   window.location.reload();
+               }
+            });
+        });
+        $(".remove-from-cart").click(function (e) {
+            e.preventDefault();
+            var ele = $(this);
+            if(confirm("Are you sure")) {
+                $.ajax({
+                    url: '{{ url('remove-from-cart') }}',
+                    method: "DELETE",
+                    data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id")},
+                    success: function (response) {
+                        window.location.reload();
+                    }
+                });
+            }
+        });
+    </script>
 @endsection

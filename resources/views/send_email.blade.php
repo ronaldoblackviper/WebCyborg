@@ -1,23 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.header')
 
 @section('content')
 <div class="site-section bg-light" id="contact-section">
-        <link rel="stylesheet" href="assets2/fonts/icomoon/style.css">
-
-        <link rel="stylesheet" href="assets2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets2/css/jquery-ui.css">
-        <link rel="stylesheet" href="assets2/css/owl.carousel.min.css">
-        <link rel="stylesheet" href="assets2/css/owl.theme.default.min.css">
-        <link rel="stylesheet" href="assets2/css/owl.theme.default.min.css">
-
-        <link rel="stylesheet" href="assets2/css/jquery.fancybox.min.css">
-
-        <link rel="stylesheet" href="assets2/css/bootstrap-datepicker.css">
-
-        <link rel="stylesheet" href="assets2/fonts/flaticon/font/flaticon.css">
-
-        <link rel="stylesheet" href="assets2/css/aos.css">
-
         <link rel="stylesheet" href="assets2/css/style.css">
         <div class="container">
           <div class="row mb-5">
@@ -91,17 +75,4 @@
           
         </div>
       </div>
-      <script src="assets2/js/jquery-3.3.1.min.js"></script>
-      <script src="assets2/js/jquery-migrate-3.0.1.min.js"></script>
-      <script src="assets2/js/jquery-ui.js"></script>
-      <script src="assets2/js/popper.min.js"></script>
-      <script src="assets2/js/bootstrap.min.js"></script>
-      <script src="assets2/js/owl.carousel.min.js"></script>
-      <script src="assets2/js/jquery.stellar.min.js"></script>
-      <script src="assets2/js/jquery.countdown.min.js"></script>
-      <script src="assets2/js/bootstrap-datepicker.min.js"></script>
-      <script src="assets2/js/jquery.easing.1.3.js"></script>
-      <script src="assets2/js/aos.js"></script>
-      <script src="assets2/js/jquery.fancybox.min.js"></script>
-      <script src="assets2/js/jquery.sticky.js"></script>
 @endsection
