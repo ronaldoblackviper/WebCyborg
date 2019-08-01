@@ -1,77 +1,42 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+<link rel="stylesheet" href="register_v1/css/style.css">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+    <div class="wrapper">
+        <div class="inner">
+            <div class="image-holder">
+                <img src="register_v1/images/registration-form-4.jpg" alt="">
             </div>
+        <form method="POST" action="{{ route('register') }}">
+                {{ csrf_field() }}
+                <h3>Sign Up</h3>
+                <div class="form-holder active">
+                    <input type="text" name="name" id="inputname" placeholder="Please input your name" class="form-control">
+                </div>
+                <div class="form-holder">
+                    <input type="text" name="email" id="inputemail" placeholder="e-mail" class="form-control">
+                </div>
+                <div class="form-holder">
+                    <input type="password" name="password" id="inputpassword" placeholder="Password" class="form-control" style="font-size: 15px;">
+                </div>
+                <div class="form-holder">
+                    <input type="password" name="password_confirmation" id="inputpassword" placeholder="Password" class="form-control" style="font-size: 15px;">
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" checked> I agree all statement in <a href="#">Terms & Conditions</a>
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="form-login">
+                    <button type="submit">Sign up</button>
+                    <p>Already Have account? <a href="/Login">Login</a></p>
+                </div>
+            </form>
         </div>
     </div>
-</div>
+
+    <script src="register_v1/js/jquery-3.3.1.min.js"></script>
+    <script src="register_v1/js/main.js"></script>
 @endsection
