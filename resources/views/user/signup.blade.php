@@ -4,9 +4,18 @@
     Sign Up
 @endsection
 
-@section('content')    
+@section('content')   
+<div class="container">
     <div class="row">
-        <div class="col-md-4 col-md-offset-4">
+
+<style type="text/css">
+    .form{
+        width: 370px;
+        margin:180px auto;
+    }
+</style>
+        <div class="form">
+        <div class="col-md-10 col-md-offset-4">
             <h1>Sign Up</h1>
             @if (count($errors) > 0)
                 <div class="laert alert-danger">
@@ -34,4 +43,6 @@
             </form>
         </div>
     </div>
+    </div>
+</div>
 @endsection

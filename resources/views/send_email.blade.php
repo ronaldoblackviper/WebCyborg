@@ -1,11 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.master')
+
+@section('title')
+    Contact Us
+@endsection
 
 @section('content')
-<div class="site-section bg-light" id="contact-section">
-        <link rel="stylesheet" href="assets2/css/style.css">
+<div class="site-section " id="contact-section">
         <div class="container">
           <div class="row mb-5">
             <div class="col-12 text-center">
+              <br><br>
               <h2 class="section-title mb-3">Contact Form</h2>
             </div>
           </div>

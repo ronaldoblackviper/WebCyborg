@@ -4,9 +4,18 @@
     Log In
 @endsection
 
-@section('content')    
+@section('content') 
+<div class="container">   
     <div class="row">
-        <div class="col-md-4 col-md-offset-4">
+        <style type="text/css">
+            .login{
+                margin: 180px auto;
+                width: 370px;
+                
+            }
+        </style>
+        <div class="login">
+        <div class="col-md-10 col-md-offset-4">
             <h1>Login</h1>
             @if (count($errors) > 0)
                 <div class="laert alert-danger">
@@ -31,4 +40,7 @@
             <p>Don't have an account? <a href="{{ route('user.signup') }}">Sign Up</a></p>
         </div>
     </div>
+</div>
+</div>
+
 @endsection

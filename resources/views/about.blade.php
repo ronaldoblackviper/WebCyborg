@@ -1,14 +1,17 @@
-@extends('layouts.app')
+@extends('layouts.master')
+
+@section('title')
+    About Us
+@endsection
 
 @section('content')
     <!--====== Style css ======-->
-    <link rel="stylesheet" href="landing_v1/css/style.css">
-    <link rel="stylesheet" href="assets2/css/style.css">
 
-    <div class="site-section bg-light" id="about-section">
+    <div class="site-section" id="about-section">
         <div class="container">
         <div class="row mb-5">
             <div class="col-12 text-center">
+                <br><br><br>
             <h2 class="section-title mb-3">About Us</h2>
             </div>
         </div>
