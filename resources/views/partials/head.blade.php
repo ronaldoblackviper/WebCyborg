@@ -8,7 +8,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item">
         <a class="nav-link" href="{{ route('product.home') }}">Home</a>
         </li>
         <li class="nav-item">
@@ -22,7 +22,7 @@
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="{{ route('product.shoppingCart') }}">
               <i class="fa fa-shopping-cart" aria-hidden="true"></i> Shopping Cart
             <span class="badge">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span>
@@ -41,9 +41,18 @@
             <a class="dropdown-item" href="{{ route('user.login') }}">Login</a>
             <a class="dropdown-item" href="{{ route('user.signup') }}">Sign Up</a>  
           @endif
-        </div>
-      </li>
+          </div>
+        </li>
       </ul>
     </div>
   </nav>
 </header>
+
+<script>
+  $(document).ready(function() {
+      $(".nav-item a").on("click", function(){
+      $(".nav-item").find(".active").removeClass("active");
+      $(this).parent().addClass("active");
+   });
+  });
+</script>

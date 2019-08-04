@@ -11,26 +11,6 @@
 |
 */
 
-Route::get('/Register', function () {
-    return view('register');
-});
-
-Route::get('/Login', function () {
-    return view('login');
-});
-
-Route::get('/', function () {
-    return view('landing_page');
-});
-
-Route::get('/Contact', function () {
-    return view('contact');
-});
-
-// Route::get('/Product', function () {
-//     return view('product');
-// });
-
 Route::get('/About', function () {
     return view('about');
 });
@@ -38,39 +18,6 @@ Route::get('/About', function () {
 Route::get('/sendemail','SendEmailController@index');
 
 Route::post('/sendemail/send','SendEmailController@send');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-// Route::get('/checkout', function(){
-//     if(!auth::check()){
-//         return redirect('login');
-//     }
-//      $post = Session::get('cart');
-//      $post = $post[0];
-//      $post['user_id'] = auth::user()->id;
-   
-//     return view('checkout', compact('post'));
-// });
-   
-// Route::get("/Cart", function(){
-//     if(!auth::check()){
-//         return redirect('login');
-//     }
-
-//     return view('cart');
-// });
-
-// Route::get('/', 'ProductsController@index');
-
-// Route::get('cart', 'ProductsController@cart');
-
-// Route::get('add-to-cart/{id}', 'ProductsController@addToCart');
-
-// Route::patch('update-cart', 'ProductsController@update');
- 
-// Route::delete('remove-from-cart', 'ProductsController@remove');
 
 Route::get('/product', [
     'uses' => 'ProductController@getIndex',
@@ -96,7 +43,7 @@ Route::post('/login', [
     'as' => 'user.login',
     'middleware' => 'guest'
 ]);
-Route::get('/profle', [
+Route::get('/profile', [
     'uses' => 'UserController@getProfile',
     'as' => 'user.profile',
     'middleware' => 'auth'
@@ -136,3 +83,30 @@ Route::get('/',[
     'uses' => 'ProductController@getHome',
     'as' => 'product.home'
 ]);
+
+// Route::get('/admin', function () {
+//     return view('home');
+// });
+Route::get('/loginadmin',[
+    'uses' => 'AuthController@login',
+    'as' => 'login.admin'
+]);
+Route::post('/postlogin', 'AuthController@postlogin');
+Route::get('/logoutadmin','AuthController@logout');
+
+Route::group(['middleware'=>'auth'] ,function(){
+    Route::get('/dashboard', [
+        'uses' => 'DashboardController@dashboard_index',
+        'as' => 'dashboard.admin'
+    ]);
+    // Route::get('/admin', 'AdminController@admin_index');2
+    Route::get('/user', 'UserController@user_index');
+    Route::get('/user/{id}/edit','UserController@edit');
+    Route::post('/user/{id}/update','UserController@update');
+    Route::get('/user/{id}/delete','UserController@delete');
+    Route::get('/aplikasi', 'AplikasiController@aplikasi_index');
+    Route::get('/aplikasi/{id}/edit','AplikasiController@edit');
+    Route::post('/aplikasi/{id}/update','AplikasiController@update');
+    Route::get('/aplikasi/{id}/delete','AplikasiController@delete');
+    Route::post('/aplikasi/create','AplikasiController@create');
+});

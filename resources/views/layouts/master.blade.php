@@ -38,7 +38,6 @@
             display: block;
             align-items: center;
             align-content: center;
-            position: relative;  
         }
         .fixed-header{
             top: 0;
@@ -53,6 +52,37 @@
     @include('partials.head')
     
     @yield('content')
+
+    {{-- chat part start --}}
+    <section class="container">
+        <button class="open-button" onclick="openform()">Live Chat</button>
+        
+        <div class="chat-popup" id="myform">
+            <form action="" class="form-container">
+                <div class="chatbox" >
+                    <button type="button" class="btn-cancel" onclick="closeform()">X</button>
+
+                    <div class="chatlogs">
+            
+                        <div class="chat friend">
+                            <div class="user-photo"></div>
+                            <p id="user" class="chat-message">Hello, Welcome. Ask me to know information from us</p>
+                        </div>
+                        <div class="chat self">
+                            <div class="user-photo"></div>
+                            <p id="chatbot" class="chat-message">|</p>
+                        </div>
+                    </div>
+            
+                    <div class="chat-form">
+                        <textarea id="input" type="text" placeholder="say anything. . . press enter to send"></textarea>
+                        {{-- <button type="submit" class="button">Send</button> --}}
+                    </div>
+                </div>
+            </form>
+        </div>        
+    </section>
+    {{-- chat part end --}}
     
     @include('partials.footer')
         
@@ -60,6 +90,17 @@
 <script src="{{ URL::to('assets/js/bootstrap.min.js')}}"></script>
 <script src="{{ URL::to('assets/js/popper.min.js')}}"></script>
 <script src="{{ URL::to('assets/js/jquery.min.js')}}"></script>
+<script src="{{ URL::to('assets/js/chatbot.js')}}"></script>
+
 @yield('scripts')
+
+<script>
+        function openform(){
+            document.getElementById("myform").style.display="block";
+        }
+        function closeform(){
+            document.getElementById("myform").style.display="none";
+        }
+    </script>
 </body>
 </html>

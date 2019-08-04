@@ -34,7 +34,7 @@
                 </div>
             @endif
 
-            <form method="POST" action="{{ url('sendemail/send')}}" class="p-5 bg-white">
+            <form method="POST" action="{{ url('sendemail/send')}}" class="p-5 bg-white shadow-lg">
 
               {{ csrf_field() }}
                 <div class="row form-group">

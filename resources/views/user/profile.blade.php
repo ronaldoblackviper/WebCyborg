@@ -1,23 +1,26 @@
 @extends('layouts.master')
 
 @section('title')
-    Profile
+    Order
 @endsection
 
 @section('content')  
-
+<style type="text/css">
+    .card{
+        width: 600px;
+        height: auto;
+        margin: 150px auto;
+        padding-top: 20px;
+        padding-bottom: 30px;
+        align-items: center;
+        justify-content: center;
+        display: flex;  
+    }
+</style>
 <div class="container">
     <div class="row">
-        <style type="text/css">
-            .form{
-                margin: 180px auto;
-                width: 370px;
-            }
-        </style>
-        <div class="form">
-        <div class="col-md-12 col-md-offset-6">
-            <h1>User Profile</h1>
-            <hr>
+        <div class="card text-center shadow-lg">
+        <div class="col-md-10 col-md-offset-4">
             <h2>My Orders</h2>
             <hr>
             @foreach ($orders as $order)
@@ -34,7 +37,7 @@
                     </div>
                     <br>
                     <div class="panel-footer">
-                        <strong>Total Proce : Rp. {{ $order->cart->totalprice }}</strong>
+                        <strong>Total Price : Rp. {{ $order->cart->totalprice }}</strong>
                     </div>
                     <hr>
                 </div>

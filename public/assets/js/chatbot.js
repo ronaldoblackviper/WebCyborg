@@ -1,20 +1,42 @@
 var trigger = [
-    ["hi","hey","hello"],
-    ["bisakah saya bertanya","saya ingin bertanya"]
+    ["hi","hey","hello","p","tes"],
+    ["bisakah saya bertanya","saya ingin bertanya"],
+    ["pembayaran","bayar","bagaimana cara saya membayar aplikasi ini","metode pembayaran apa yang digunakan"],
+    ["password","saya lupa password","saya mengalami masalah dengan password saya","saya gagal login","bagaimana saya mengatasi gagal login"],
+    ["bagaimana cara menghubungi admin","kontak email admin","email admin"],
+    ["terimakasih","thx","thanks"],
+    ["saya tidak bisa membeli aplikasi ini","aplikasi tidak dapat dibeli","tidak bisa beli"],
+    ["bagaimana cara saya mengunduh petunjuk cara pakai aplikasi","petunjuk aplikasi","unduh petunjuk aplikasi","download petunjuk aplikasi"," unduh petunjuk pemakaian aplikasi",
+    "pemakaian aplikasi","cara menggunakan aplikasi","bagaimana saya menggunakan aplikasi","petunjuk aplikasi"],
+    ["lokasi","lokasi cyborgITcenter","CITC","citc"],
+    
+
 ];
 
 var reply = [
     ["Hi","Hey","Hello"],
-    ["Apa yang ingin anda tanyakan?","Silahkan ajukan pertanyaan"]
+    ["Apa yang ingin anda tanyakan?","Silahkan ajukan pertanyaan"],
+    ["silahkan ke menu product -> shop now -> process check out -> pilih metode pembayaran  :) "],
+    ["silahkan ke menu contact dan kirimkan keluhan anda :) "],
+    ["silahkan ke menu contact dan kirimkan keluhan anda :) "],
+    ["terimakasih kembali","terimakasih, hubungi kami jika mengalami kendala lagi"],
+    ["pastikan anda login terlebihdulu", "periksa apakah anda sudah login","aplikasi hanya dapat dibeli dengan login user terlebih dahulu"],
+    ["silahkan klik petunjuk pemakaian aplikai pada halaman product, untuk mengunduh dan membaca petunjuk penggunaan aplikasi"],
+    ["silahkan ke menu about us, temukan lokasi kami disana :)"],
+
+
 ];
 
-var alternative = ["sorry i am still learning"];
+var alternative = ["kata kunci yang anda masukkan kurang tepat"];
 document.querySelector("#input").addEventListener("keypress",function(e){
     var key = e.which || e.keycode;
     if(key === 13){//enter button
         var input = document.getElementById("input").value;
         document.getElementById("user").innerHTML = input;
         output(input);
+    }
+    if($(this).val() == "" && e.keyCode == 13) {
+        e.preventDefault();
     }
 });
 
