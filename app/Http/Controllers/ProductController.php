@@ -95,7 +95,7 @@ class ProductController extends Controller
             $order->cart = serialize($cart);
             $order->address = $request->input('address');
             $order->name = $request->input('name');
-            $order->payment_id = 2;
+            $order->payment_id = 4;
 
             Auth::user()->orders()->save($order);
         }catch(\exception $e){

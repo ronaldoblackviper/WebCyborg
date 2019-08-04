@@ -94,12 +94,29 @@ Route::get('/loginadmin',[
 Route::post('/postlogin', 'AuthController@postlogin');
 Route::get('/logoutadmin','AuthController@logout');
 
+// Route::group(['middleware'=>'auth'] ,function(){
+//     Route::get('/dashboard', [
+//         'uses' => 'DashboardController@dashboard_index',
+//         'as' => 'dashboard.admin'
+//     ]);
+//     // Route::get('/admin', 'AdminController@admin_index');
+//     Route::get('/user', 'UserController@user_index');
+//     Route::get('/user/{id}/edit','UserController@edit');
+//     Route::post('/user/{id}/update','UserController@update');
+//     Route::get('/user/{id}/delete','UserController@delete');
+//     Route::get('/aplikasi', 'AplikasiController@aplikasi_index');
+//     Route::get('/aplikasi/{id}/edit','AplikasiController@edit');
+//     Route::post('/aplikasi/{id}/update','AplikasiController@update');
+//     Route::get('/aplikasi/{id}/delete','AplikasiController@delete');
+//     Route::post('/aplikasi/create','AplikasiController@create');
+// });
+Route::get('/dashboard', [
+    'uses' => 'DashboardController@dashboard_index',
+    'as' => 'dashboard.admin',
+    'middleware' => 'auth'
+]);
 Route::group(['middleware'=>'auth'] ,function(){
-    Route::get('/dashboard', [
-        'uses' => 'DashboardController@dashboard_index',
-        'as' => 'dashboard.admin'
-    ]);
-    // Route::get('/admin', 'AdminController@admin_index');2
+    // Route::get('/admin', 'AdminController@admin_index');
     Route::get('/user', 'UserController@user_index');
     Route::get('/user/{id}/edit','UserController@edit');
     Route::post('/user/{id}/update','UserController@update');
@@ -110,3 +127,4 @@ Route::group(['middleware'=>'auth'] ,function(){
     Route::get('/aplikasi/{id}/delete','AplikasiController@delete');
     Route::post('/aplikasi/create','AplikasiController@create');
 });
+

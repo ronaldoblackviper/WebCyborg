@@ -12,15 +12,15 @@ class AuthController extends Controller
     }
 
     public function postlogin(Request $request){
-        if($request->input('email') == 'cyborgitweb@gmail.com' && $request->input('password') == 'Cyb0rgW3b') {
-            // \Session::put('adminUser',$user);
-            return redirect()->route('dashboard.admin');
-        }else{
-            if(Auth::attempt($request->only('email','password'))){
+        if(Auth::attempt($request->only('email','password'))){
+            if($request->input('email') == 'cyborgitweb@gmail.com' && $request->input('password') == 'Cyb0rgW3b') {
+                // \Session::put('adminUser',$user);
+                return redirect()->route('dashboard.admin');
+            }else{
                 return redirect()->route('login.admin')->with('alert', 'Anda Bukan Admin!!!');
             }
-            return redirect()->route('login.admin')->with('alert', 'Akun anda tidak terdaftar!');
         }
+        return redirect()->route('login.admin')->with('alert', 'Akun anda tidak terdaftar!');
     }
 
     public function logout(){

@@ -21,11 +21,20 @@
             <div class="card text-center shadow-lg">
                 <div class="col-md-10 col-md-offset-4">
                     <h1 style="font-family: Arial, Helvetica, sans-serif">Login</h1><hr>
-                    @if (count($errors) > 0)
+                    {{-- @if (count($errors) > 0)
                         <div class="alert alert-danger">
                             @foreach ($errors->all() as $error)
                                 <p>{{ $error }}</p>
                             @endforeach
+                        </div>
+                    @endif --}}
+                    @if (Session::has('alert'))
+                        <div class="row text-center" style="justify-content: center;">
+                            <div class="col-sm-12 col-md-12 col-md-offset-12 col-sm-offset-12">
+                                <div id="charge-message" class="alert alert-danger">
+                                    {{ Session::get('alert') }}
+                                </div>
+                            </div>
                         </div>
                     @endif
                     <form action="{{ route('user.login') }}" method="POST">

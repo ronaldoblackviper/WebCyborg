@@ -50,11 +50,12 @@ class UserController extends Controller
             'password' => 'required|min:6'
         ]);
 
-        // if($request->input('email') == 'cyborgitweb@gmail.com' && $request->input('password') == 'Cyb0rgW3b') {
-        //     // \Session::put('adminUser',$user); 
-        //     return redirect()->route('dashboard.admin');
         // }else{
             if(Auth::attempt(['email' => $request->input('email'),'password' => $request->input('password')])){
+                if($request->input('email') == 'cyborgitweb@gmail.com' && $request->input('password') == 'Cyb0rgW3b') {
+                    // \Session::put('adminUser',$user); 
+                    return redirect()->route('dashboard.admin');
+                }
                 if(Session::has('oldUrl')){
                     $oldUrl = Session::get('oldUrl');
                     Session::forget('oldUrl');
@@ -62,7 +63,7 @@ class UserController extends Controller
                 }
                 return redirect()->route('user.profile');
             }
-            return redirect()->back();
+            return redirect()->back()->with('alert', 'Email atau Password anda salah!!!');;
             // if(Auth::attempt($request->only('email','password'))){
             //     return redirect()->route('login.admin')->with('alert', 'Anda Bukan Admin!!!');
             // }
