@@ -5893,7 +5893,7 @@ h6 {
 .open-button{
   display: flex;
   position: fixed;
-  bottom: 55px;
+  bottom: 30px;
   right: 55px;
   background: #1ddced;
   padding: 5px 15px;
@@ -5904,6 +5904,15 @@ h6 {
   margin:  0 5px;
   border-radius: 10px;
   box-shadow: 0 3px 0 #0eb2c1;
+  cursor: pointer;
+}
+.open-wa{
+  /* display: flex; */
+  position: fixed;
+  bottom: 65px;
+  right: 55px;
+  border: none;
+  margin:  0 5px;
   cursor: pointer;
 }
 

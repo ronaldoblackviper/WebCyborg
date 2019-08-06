@@ -32,27 +32,26 @@ class AplikasiController extends Controller
 
     public function update(Request $request,$id){
         $aplikasi = \App\Product::find($id);
-        $aplikasi -> update($request->all());
-        // $this->validate($request, [
-        //     'imagePath' => 'required|file|max:2000',
-        //     'title' => 'required',
-        //     'description' => 'required',
-        //     'price' => 'required'
-        // ]);
-        // $cover = $request->file('imagePath');
-        // $extension = $cover->getClientOriginalExtension();
-        // Storage::disk('uploads')->put($cover->getFilename().'.'.$extension,  File::get($cover));
+        // $aplikasi -> update($request->all());
+        
+        $cover = $request->file('imagePath');
+        if($cover != ""){
+            $extension = $cover->getClientOriginalName();
+            Storage::disk('uploadsimage')->put($extension,  File::get($cover));
+            $aplikasi->imagePath = 'uploads/image/'.$extension;
+        }
+        $cover1 = $request->file('docPath');
+        if($cover1 != ""){
+            $extension1 = $cover1->getClientOriginalName();
+            Storage::disk('uploadsdoc')->put($extension1,  File::get($cover1));
+            $aplikasi->docPath = 'uploads/document/'.$extension1;
+        }
 
-        // $aplikasi->imagePath = 'uploads/'.$cover->getFilename().'.'.$extension;
-        // $aplikasi->title = $request->title;
-        // $aplikasi->description = $request->description;
-        // $aplikasi->price = $request->price;
-        // // 'imagePath' => $request->input('imagePath'),
-        // // 'title' => $request->input('title'),
-        // // 'description' => $request->input('description'),
-        // // 'price' => $request->input('price')
-        // // $products->save();
-        // $aplikasi->update();
+        $aplikasi->title = $request->title;
+        $aplikasi->description = $request->description;
+        $aplikasi->price = $request->price;
+        $aplikasi->update();
+
         return redirect('/aplikasi');
     }
 
@@ -60,23 +59,24 @@ class AplikasiController extends Controller
     //    \App\Product::create($request->all());
         $this->validate($request, [
             'imagePath' => 'required|file',
+            'docPath' => 'required|file',
             'title' => 'required',
             'description' => 'required',
             'price' => 'required'
         ]);
         $cover = $request->file('imagePath');
-        $extension = $cover->getClientOriginalExtension();
-        Storage::disk('uploads')->put($cover->getFilename().'.'.$extension,  File::get($cover));
+        $extension = $cover->getClientOriginalName();
+        Storage::disk('uploadsimage')->put($extension,  File::get($cover));
+        $cover1 = $request->file('docPath');
+        $extension1 = $cover1->getClientOriginalName();
+        Storage::disk('uploadsdoc')->put($extension1,  File::get($cover1));
 
         $products = new Product();
-        $products->imagePath = 'uploads/'.$cover->getFilename().'.'.$extension;
+        $products->imagePath = 'uploads/image/'.$extension;
+        $products->docPath = 'uploads/document/'.$extension1;
         $products->title = $request->title;
         $products->description = $request->description;
         $products->price = $request->price;
-        // 'imagePath' => $request->input('imagePath'),
-        // 'title' => $request->input('title'),
-        // 'description' => $request->input('description'),
-        // 'price' => $request->input('price')
         $products->save();
 
         return redirect('/aplikasi');

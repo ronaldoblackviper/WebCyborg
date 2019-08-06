@@ -23,6 +23,7 @@ Route::get('/product', [
     'uses' => 'ProductController@getIndex',
     'as' => 'product.index'
 ]);
+Route::get('/product/{id}','ProductController@showid');
 Route::get('/signup', [
     'uses' => 'UserController@getSignup',
     'as' => 'user.signup',
@@ -68,12 +69,12 @@ Route::get('/remove/{id}', [
 Route::get('/shopping-cart',[
     'uses' => 'ProductController@getCart',
     'as' => 'product.shoppingCart'    
-]);
-Route::get('/checkout',[
-    'uses' => 'ProductController@getCheckout',
-    'as' => 'checkout',
-    'middleware' => 'auth'    
-]);
+    ]);
+    Route::get('/checkout',[
+        'uses' => 'ProductController@getCheckout',
+        'as' => 'checkout',
+        'middleware' => 'auth'    
+        ]);
 Route::post('/checkout',[
     'uses' => 'ProductController@postCheckout',
     'as' => 'checkout',

@@ -44,6 +44,13 @@ class ProductController extends Controller
         }
         return redirect()->route('product.shoppingCart');
     }
+    public function showid($id){
+        $products = Product::findOrFail($id);
+        return view('shop.productdetail',['products' => $products]);
+
+        // $projects = Projects::with('projectDetails')->findOrFail($id);
+        // return View::make('projects.currentProjects.projectDetails', compact($projects));
+    }
     
     public function getRemoveItem($id){
         $oldCart = Session::has('cart') ? Session::get('cart') : null;

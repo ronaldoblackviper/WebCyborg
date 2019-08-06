@@ -4214,9 +4214,12 @@ section {
 
 /* ----- Table ----- */
 .table {
-    margin: 0;
+    margin: 0px;
+    width: 600px;
     
 }
+
+
 
 .table-responsive.table--no-card {
     -webkit-border-radius: 10px;

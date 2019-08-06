@@ -22,7 +22,13 @@
                     <div class="form-group">
                         <label for="exampleInputEmail1">Image</label>
                         <input name="imagePath" type="file" class="form-control" id="imagePath" aria-describedby="emailHelp" placeholder="Image"
-                        value="{{$aplikasi -> imagePath}}">
+                        value="{{old($aplikasi -> imagePath)}}">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Document</label>
+                        <input name="docPath" type="file" class="form-control" id="docPath" aria-describedby="emailHelp" placeholder="Document"
+                        value="{{$aplikasi -> docPath}}">
                     </div>
 
                     <div class="form-group">

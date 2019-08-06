@@ -55,9 +55,13 @@ return [
             'visibility' => 'public',
         ],
 
-        'uploads' => [
+        'uploadsimage' => [
             'driver' => 'local',
-            'root'   => public_path() . '/uploads',
+            'root'   => public_path() . '/uploads/image',
+        ],
+        'uploadsdoc' => [
+            'driver' => 'local',
+            'root'   => public_path() . '/uploads/document',
         ],
 
         's3' => [
