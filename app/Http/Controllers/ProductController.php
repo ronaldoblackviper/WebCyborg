@@ -46,7 +46,8 @@ class ProductController extends Controller
     }
     public function showid($id){
         $products = Product::findOrFail($id);
-        return view('shop.productdetail',['products' => $products]);
+        $products1= Product::all();
+        return view('shop.productdetail',['products' => $products],['products1' => $products1]);
 
         // $projects = Projects::with('projectDetails')->findOrFail($id);
         // return View::make('projects.currentProjects.projectDetails', compact($projects));

@@ -55,7 +55,7 @@
 
     {{-- chat part start --}}
     <section class="container">
-        <a class="open-wa" href="https://api.whatsapp.com/send?phone=6289648033807">
+        <a class="open-wa" href="https://api.whatsapp.com/send?phone=628117899088">
             <img style="border-radius: 50%" alt="whatsapp" src="/assets/img/iconwa.png" width="50" height="50">
         </a>
         {{-- <button class="open-button" onclick="openform()">Live Chat</button> --}}
